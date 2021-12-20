@@ -32,17 +32,17 @@ public class Match implements Comparable<Match>{
     Returns the frequency of the match (as explained above).
      */
     public int getFreq() {
-        return freq;
+        return this.freq;
     }
 
     /*
     Returns the first index of the match (as explained above).
      */
     public int getFirstIndex() {
-        return firstIndex;
+        return this.firstIndex;
     }
 
     public Word getWord() {
-        return w;
+        return this.w;
     }
 }

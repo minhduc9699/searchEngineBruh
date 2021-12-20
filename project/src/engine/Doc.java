@@ -10,7 +10,7 @@ public class Doc {
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public void setTitle(String title) {
@@ -18,12 +18,10 @@ public class Doc {
     }
 
     public String getBody() {
-        return body;
+        return this.body;
     }
 
     public void setBody(String body) {
         this.body = body;
     }
-
-
 }

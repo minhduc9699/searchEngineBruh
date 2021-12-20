@@ -14,32 +14,31 @@ public class Word {
     private String prefix = "";
     private String text;
 
-    //need redo
     public Word(String raw) {
         String str = raw;
         if (isKeyword()) {
             char[] cA = str.toCharArray();
             if (!Character.isAlphabetic(cA[0])) {
-                prefix = str.substring(0,1);
-                str = str.replace(prefix, "");
+                this.prefix = str.substring(0,1);
+                str = str.replace(this.prefix, "");
             }
             if (!Character.isAlphabetic(cA[cA.length-1])) {
-                suffix = str.substring(str.length() - 1);
-                str = str.replace(suffix, "");
+                this.suffix = str.substring(str.length() - 1);
+                this.str = str.replace(this.suffix, "");
             } else if (!Character.isAlphabetic(cA[cA.length - 2])) {
-                suffix = str.substring(str.length() - 2);
-                str = str.replace(suffix, "");
+                this.suffix = str.substring(str.length() - 2);
+                this.str = str.replace(this.suffix, "");
             }
         }
-        text = str;
+        this.text = str;
     }
 
     public String getSuffix() {
-        return suffix;
+        return this.suffix;
     }
 
     public String getPrefix() {
-        return prefix;
+        return this.prefix;
     }
 
     //Returns true if the word is a keyword.
@@ -54,18 +53,18 @@ public class Word {
 
     //Returns the text part of the word.
     public String getText() {
-        return text;
+        return this.text;
     }
 
     //Two words are considered equal if their text parts are equal, case-insensitively.
     public boolean equals(Object o) {
         Word w = (Word) o;
-        return text.equalsIgnoreCase(w.getText());
+        return this.text.equalsIgnoreCase(w.getText());
     }
 
     //Returns the raw text of the word.
     public String toString() {
-        return prefix + text + suffix;
+        return this.prefix + this.text + this.suffix;
     }
 
     //Construct and return a complete Word object from raw text.

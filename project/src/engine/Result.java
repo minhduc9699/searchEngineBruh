@@ -16,14 +16,14 @@ public class Result implements Comparable<Result>{
     }
 
     public Doc getDoc() {
-        return d;
+        return this.d;
     }
 
     /*
     The method’s name explains itself.
      */
     public List<Match> getMatches() {
-        return matches;
+        return this.matches;
     }
 
     /*
@@ -37,9 +37,9 @@ public class Result implements Comparable<Result>{
     The method’s name explains itself.
      */
     public double getAverageFirstIndex() {
-        int sum = getTotalFrequency();
-        double res = sum / matches.size();
-        return res;
+        int totalFrequency = getTotalFrequency();
+        double averageFirstIndex = totalFrequency / matches.size();
+        return averageFirstIndex;
     }
 
     /*
@@ -60,14 +60,15 @@ public class Result implements Comparable<Result>{
              A has lower average first index than B
      */
     public int compareTo(Result o) {
-        int result = Integer.compare(this.matches.size(), o.matches.size());
-        if (result == 0) {
-            result = Integer.compare(this.getTotalFrequency(), o.getTotalFrequency());
-            if (result == 0) {
-                result = Double.compare(this.getAverageFirstIndex(), o.getAverageFirstIndex()) * -1;
+        int matchSizeCompare = Integer.compare(this.matches.size(), o.matches.size());
+        int totalFrequencyCompare = Integer.compare(this.getTotalFrequency(), o.getTotalFrequency());
+        int averageFirstIndexCompare = Double.compare(this.getAverageFirstIndex(), o.getAverageFirstIndex()) * -1;
+        List<int> criteriaCompares = Arrays.asList(matchSizeCompare, totalFrequencyCompare, averageFirstIndexCompare);
+        for(int criteriaCompare: criteriaCompares) {
+            if(criteriaCompare == 0) {
+                return result;
             }
         }
-        return result;
     }
 
 }

@@ -20,8 +20,8 @@ public class Query {
     raw search phrase.
      */
     public List<Word> getKeywords() {
-        List keyWordList = new ArrayList<>();
-        return keyWordList;
+        List keyWords = new ArrayList<>();
+        return keyWords;
     }
 
     /*

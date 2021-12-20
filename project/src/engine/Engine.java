@@ -12,8 +12,8 @@ public class Engine {
     loaded. Refer to the Doc class for more information about a Doc object.
      */
     public int loadDocs(String folderName) {
-        File directory = new File("docs");
-        return directory.list().length;
+        File folder = new File("docs");
+        return folder.list().length;
     }
 
     //Returns an array of documents in the original order.
@@ -26,8 +26,8 @@ public class Engine {
     results. Refer to the classes above to know the expected search results.
      */
     public List<Result> search(Query q) {
-        List<Result> resultList = new ArrayList<>();
-        return resultList;
+        List<Result> results = new ArrayList<>();
+        return results;
     }
 
     /*
